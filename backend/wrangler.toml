@@ -4,7 +4,7 @@ main = "src/index.ts"    # Entry point for your Worker
 
 # Environment variables (optional)
 [vars]
-DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiOTQyMzgzNzItYTE0NS00NmFhLThmY2UtNmRkMDE4Y2MyY2I5IiwidGVuYW50X2lkIjoiZTE1OGZhMjE3YzliMWU1ZjEyZjliZmIyYTZhNGZmYzAzYzc3OWRhMDhmZjA1YjczYzY1ZjUyM2E3MWM0YTNiNiIsImludGVybmFsX3NlY3JldCI6IjA4NWY3ZGNmLTE4NWUtNDIxMC1hMzZlLTMxNmJlNDI3OTM3ZCJ9.7orBgD7GEHK7QMpuDL6GfPu84e-j8yQoN8SyRZLVU6w"
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiMDQ1NDA2NmEtYTAwZS00NWU3LThmZDQtMDRkNGVhYjgxYzUzIiwidGVuYW50X2lkIjoiNmUzNzZkZmY4ZWExZDFkZDIzNzFmYjI3YWVlNDY0MzFlOGE4ZjA4Y2MyOTcxM2FlNTZjODg4Mzg4OGI1NjA1ZCIsImludGVybmFsX3NlY3JldCI6ImQ1NTZhYjRlLTZkNGEtNGU0My04NjlmLWJlYzEyYTc2OGI2MSJ9.51vwGGFsO4IkdqHEnNceRHcMsETouOBiNq9DCQz2yrg"
 
 # Secrets (use `wrangler secret put` to set these)
 # [secrets]
