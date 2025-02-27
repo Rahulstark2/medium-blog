@@ -1,0 +1,17 @@
+name = "backend"       # Your Worker's name
+compatibility_date = "2024-01-01"  # Cloudflare compatibility date
+main = "src/index.ts"    # Entry point for your Worker
+
+# Environment variables (optional)
+[vars]
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiOTQyMzgzNzItYTE0NS00NmFhLThmY2UtNmRkMDE4Y2MyY2I5IiwidGVuYW50X2lkIjoiZTE1OGZhMjE3YzliMWU1ZjEyZjliZmIyYTZhNGZmYzAzYzc3OWRhMDhmZjA1YjczYzY1ZjUyM2E3MWM0YTNiNiIsImludGVybmFsX3NlY3JldCI6IjA4NWY3ZGNmLTE4NWUtNDIxMC1hMzZlLTMxNmJlNDI3OTM3ZCJ9.7orBgD7GEHK7QMpuDL6GfPu84e-j8yQoN8SyRZLVU6w"
+
+# Secrets (use `wrangler secret put` to set these)
+# [secrets]
+# SECRET_KEY = "..."
+
+# Deployments (optional)
+[env.production]
+workers_dev = true       # Deploy to `*.workers.dev` subdomain
+# OR use a route:
+# route = "example.com/*"
