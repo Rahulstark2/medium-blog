@@ -3,7 +3,11 @@ import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
 import { sign, verify } from 'hono/jwt'
 
-const app = new Hono()
+const app = new Hono<{
+  Bindings: {
+    DATABASE_URL: string;
+  }
+}>()
 
 app.use('/api/v1/blog/*', async(c,next) => {
   const header = c.req.header("authorization") || "";
@@ -22,25 +26,31 @@ app.use('/api/v1/blog/*', async(c,next) => {
 })
 
 app.post('/api/v1/user/signup', async (c) => {
+  const body = await c.req.json();
   const prisma = new PrismaClient({
-    //@ts-ignore
     datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate());
 
-  const body = await c.req.json();
-
-  const user = await prisma.user.create({
+  try{
+  await prisma.user.create({
     data: {
       username: body.username,
       password: body.password,
-    },
+      name: body.name
+    }
   })
 
-  //@ts-ignore
-  const token = await sign({ id: user.id }, c.env.JWT_SECRET)
-  return c.json({
-    jwt: token
-})
+  return c.text('Signed up')
+} catch(e) {
+  c.status(411);
+  return c.text('Invalid')
+}
+
+//   //@ts-ignore
+//   const token = await sign({ id: user.id }, c.env.JWT_SECRET)
+//   return c.json({
+//     jwt: token
+// })
 })
 
 
