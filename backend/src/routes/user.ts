@@ -30,13 +30,14 @@ userRouter.post('/signup', async (c) => {
   }, c.env.JWT_SECRET)
   return c.text(jwt)
 } catch(e) {
+  console.error(e)
   c.status(411);
   return c.text('Invalid')
 }
 })
 
 
-app.post('/api/v1/user/signin', async (c) => {
+userRouter.post('/api/v1/user/signin', async (c) => {
   const body = await c.req.json();
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL,
