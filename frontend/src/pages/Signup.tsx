@@ -5,9 +5,11 @@ export const Signup = () => {
         <div className="grid grid-cols-2">
 
         <div>
-            
-        </div>
+            <Auth/>
+         </div>
+         <div className="invisible lg:visible">
        <Quote />
+       </div>
        </div>
     </div>
 }
