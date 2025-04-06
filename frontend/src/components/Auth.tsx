@@ -1,13 +1,17 @@
 import { ChangeEvent, useState } from "react";
 import { Link } from "react-router-dom";
-import { SignupInput, signupInput } from "@rahulstark2/medium-common";
-
+import { SignupInput } from "@rahulstark2/medium-common";
+import axios from "axios";
 export const Auth = ({type}: {type: "signup" | "signin"}) => {
     const [ postInputs, setpostInputs] = useState<SignupInput>({
         name: "",
         username: "",
         password: ""
     });
+
+    function sendRequest() {
+        axios.post(`${BACKEND_URL}`)
+    }
 
     return <div className="h-screen flex justify-center flex-col">
         <div className="flex justify-center">
@@ -24,13 +28,13 @@ export const Auth = ({type}: {type: "signup" | "signin"}) => {
                 </div>
         </div>
         <div className="pt-8">
-        <LabelledInputType label="Name" placeholder="Rahul Roy Chowdhury..." onChange={(e) => {
+        {type === "signup" ? <LabelledInputType label="Name" placeholder="Rahul Roy Chowdhury..." onChange={(e) => {
             setpostInputs({
                 ...postInputs,
                 name: e.target.value
             })
 
-        }} />
+        }} />: null}
           <LabelledInputType label="Username" placeholder="rahul@gmail.com" onChange={(e) => {
             setpostInputs({
                 ...postInputs,
