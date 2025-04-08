@@ -20,7 +20,7 @@ export const Auth = ({type}: {type: "signup" | "signin"}) => {
 
 
     } catch(e) {
-
+        alert("Error while signing up")
     }
     }
 
@@ -49,14 +49,14 @@ export const Auth = ({type}: {type: "signup" | "signin"}) => {
           <LabelledInputType label="Username" placeholder="rahul@gmail.com" onChange={(e) => {
             setpostInputs({
                 ...postInputs,
-                name: e.target.value
+                username: e.target.value
             })
 
         }} />
           <LabelledInputType label="Password" type={'password'} placeholder="123456" onChange={(e) => {
             setpostInputs({
                 ...postInputs,
-                name: e.target.value
+                password: e.target.value
             })
 
         }} />
