@@ -45,7 +45,7 @@ function Circle() {
 
     </div>
 }
-export function Avatar({ name, size = 4 }: {name: string,
+export function Avatar({ name, size = 6 }: {name: string,
     size?: number}) {
     return <div className={`relative inline-flex items-center 
     justify-center w-${size} h-${size} overflow-hidden bg-gray-600 rounded-full`}>
