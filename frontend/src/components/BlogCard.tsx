@@ -11,7 +11,7 @@ export const BlogCard = ({
     content,
     publishedDate
 }: BlogCardProps) => {
-    return <div className="p-4 border-b border-slate-200 pb-4">
+    return <div className="p-4 border-b border-slate-200 pb-4 w-screen max-w-screen-lg">
         <div className="flex">
             <Avatar name={authorName} />
             
