@@ -8,8 +8,7 @@ export const Appbar = () => {
             Medium
         </div>
         <div>
-            <Avatar 
-            name="rahul" />
+            <Avatar size={6} name="rahul" />
         </div>
     </div>
 }
