@@ -1,7 +1,8 @@
 import { BlogCard } from "../components/BlogCard"
 
 export const Blogs = () => {
-    return <div>
+    return <div className="flex justify-center">
+    <div className="flex justify-center max-w-xl">
         <BlogCard
             authorName={"Rahul Roy Chowdhury"}
             title={"How an ugly single page website makes $5000 a month without affiliate marketing"}
@@ -9,5 +10,6 @@ export const Blogs = () => {
             publishedDate={"2nd Feb 2024"}
 
         />
+    </div>
     </div>
 }
