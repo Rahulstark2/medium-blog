@@ -3,9 +3,9 @@ import { BlogCard } from "../components/BlogCard"
 export const Blogs = () => {
     return <div>
         <BlogCard
-            authorName={"rahul"}
-            title={"title of the blog"}
-            content={"content of the blog"}
+            authorName={"Rahul Roy Chowdhury"}
+            title={"How an ugly single page website makes $5000 a month without affiliate marketing"}
+            content={"How an ugly single page website makes $5000 a month without affiliate marketing. How an ugly single page website makes $5000 a month without affiliate marketing."}
             publishedDate={"2nd Feb 2024"}
 
         />
