@@ -45,6 +45,7 @@ export const useBlogs = () => {
         })
             .then(response => {
                 setBlogs(response.data.blogs)
+                console.log(response.data.blogs)
                 setLoading(false);
             })
     }, [])
