@@ -35,11 +35,14 @@ userRouter.post('/signup', async (c) => {
       }
     })
 
+    const name = body.name
     const jwt = await sign({
       id: user.id
     }, c.env.JWT_SECRET);
-
-    return c.text(jwt)
+    return c.json({
+      token: jwt,
+      name: name
+  });
   } catch(e) {
     console.log(e);
     c.status(411);
@@ -74,10 +77,15 @@ userRouter.post('/signin', async (c) => {
       message: "Incorrect creds"
     })
   }
+  
+  const name = user.name
   const jwt = await sign({
     id: user.id
   }, c.env.JWT_SECRET)
-  return c.text(jwt)
+  return c.json({
+    token: jwt,
+    name: name
+});
 } catch(e) {
   c.status(411);
   return c.text('Invalid')
