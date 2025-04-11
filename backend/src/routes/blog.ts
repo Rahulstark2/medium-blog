@@ -103,6 +103,7 @@ blogRouter.post('/', async(c) => {
     try{
     const blogs = await prisma.blog.findMany( {
         select: {
+            id:true,
             content: true,
             title: true,
             author: {
